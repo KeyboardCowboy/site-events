@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Events Config feature.
+ */
+
+include_once 'events_config.features.inc';
