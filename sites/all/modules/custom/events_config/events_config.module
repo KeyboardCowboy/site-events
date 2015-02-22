@@ -5,3 +5,45 @@
  */
 
 include_once 'events_config.features.inc';
+
+/**
+ * Implements hook_token_info().
+ */
+function events_config_token_info_alter(&$data) {
+  $data['tokens']['date']['event-month'] = array(
+    'name' => t('Current Month'),
+    'description' => t('The current month in YYYY-MM format.'),
+  );
+
+  for ($i = 1; $i <= 11; $i++) {
+    $data['tokens']['date']['event-month-' . $i] = array(
+      'name' => t('@i Months From Now', array('@i' => $i)),
+      'description' => t('The month in YYYY-MM format.'),
+    );
+  }
+}
+
+/**
+ * Implements hook_tokens().
+ */
+function events_config_tokens($type, $tokens, array $data = array(), array $options = array()) {
+  $replacements = array();
+
+  if ($type == 'date') {
+    foreach ($tokens as $name => $original) {
+      if (stristr($name, 'event-month')) {
+        list(,,$offset) = explode('-', $name);
+
+        if (empty($offset)) {
+          $offset = 0;
+        }
+
+        $time = date("Y-m", strtotime("+{$offset} month", time()));
+
+        $replacements[$original] = $time;
+      }
+    }
+  }
+
+  return $replacements;
+}

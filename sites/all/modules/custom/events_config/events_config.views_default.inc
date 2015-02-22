@@ -331,18 +331,27 @@ function events_config_views_default_views() {
 
   /* Display: Pane: Month w/ Arg */
   $handler = $view->new_display('panel_pane', 'Pane: Month w/ Arg', 'panel_pane_1');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'calendar_style';
   $handler->display->display_options['style_options']['name_size'] = '2';
-  $handler->display->display_options['style_options']['mini'] = '1';
+  $handler->display->display_options['style_options']['mini'] = '0';
   $handler->display->display_options['style_options']['with_weekno'] = '1';
   $handler->display->display_options['style_options']['multiday_theme'] = '1';
   $handler->display->display_options['style_options']['theme_style'] = '1';
-  $handler->display->display_options['style_options']['max_items'] = '1';
-  $handler->display->display_options['style_options']['max_items_behavior'] = 'hide';
+  $handler->display->display_options['style_options']['max_items'] = '3';
+  $handler->display->display_options['style_options']['multiday_hidden'] = array(
+    'field_date' => 'field_date',
+  );
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'calendar_entity';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['row_options']['colors']['calendar_colors_type'] = array(
+    'event' => '#ffffff',
+  );
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Date -  start date (field_date) */
@@ -350,6 +359,8 @@ function events_config_views_default_views() {
   $handler->display->display_options['arguments']['field_date_value']['table'] = 'field_data_field_date';
   $handler->display->display_options['arguments']['field_date_value']['field'] = 'field_date_value';
   $handler->display->display_options['arguments']['field_date_value']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_date_value']['title_enable'] = TRUE;
+  $handler->display->display_options['arguments']['field_date_value']['title'] = '%1';
   $handler->display->display_options['arguments']['field_date_value']['default_argument_type'] = 'date';
   $handler->display->display_options['arguments']['field_date_value']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_date_value']['summary']['format'] = 'default_summary';
