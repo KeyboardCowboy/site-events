@@ -1,6 +1,59 @@
 section.panel-1col {
-  .panel-pane {
-    width: 50%;
-    float: left;
+  @media ($twocol) {
+    .panel-pane {
+      width: 49%;
+      float: left;
+
+      &:nth-child(odd) {
+        margin-right: 2%;
+      }
+    }
+  }
+}
+
+#primary {
+  th {
+    padding: .25em 1em;
+
+    &.days.week {
+      width: 1em;
+    }
+  }
+
+  td {
+    border-top: 0;
+
+    &.date-box {
+      padding: .25em;
+    }
+  }
+
+  .item {
+    a, a:visited, a:hover, a:active {
+      color: #000066;
+      margin-right: .5em;
+    }
+  }
+}
+
+.view .date-nav-wrapper {
+  .date-nav {
+    background-color: #dfdfdf;
+    min-height: 41px;
+    border-radius: .25em;
+    padding-bottom: 0;
+  }
+
+  .date-prev {
+    right: auto;
+    left: 0;
+  }
+}
+
+.calendar-calendar .month-view .full tr.single-day .no-entry,
+.calendar-calendar .month-view .full tr.single-day .no-entry .inner {
+  @media ($onecol) {
+    height: auto !important;
+    line-height: 1em;
   }
 }
