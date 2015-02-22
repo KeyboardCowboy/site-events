@@ -1,0 +1,21 @@
+.panel-multirow .panel-col-first .inside {
+  margin: 0;
+}
+
+
+.panel-multirow .panel-col {
+  width: 100%;
+}
+
+.panel-multirow .panel-separator {
+  margin: 0 0 1em 0;
+}
+
+#panels-dnd-main div[class^='row-'] {
+    margin-bottom: 1em;
+}
+
+#panels-edit-display .panel-pane,
+#panels-edit-display .helperclass {
+  margin: .5em;
+}
