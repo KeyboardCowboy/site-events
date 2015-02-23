@@ -363,34 +363,6 @@ function events_config_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['hide_alter_empty'] = FALSE;
-  /* Field: Content: Date */
-  $handler->display->display_options['fields']['field_date']['id'] = 'field_date';
-  $handler->display->display_options['fields']['field_date']['table'] = 'field_data_field_date';
-  $handler->display->display_options['fields']['field_date']['field'] = 'field_date';
-  $handler->display->display_options['fields']['field_date']['label'] = '';
-  $handler->display->display_options['fields']['field_date']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_date']['hide_alter_empty'] = FALSE;
-  $handler->display->display_options['fields']['field_date']['settings'] = array(
-    'format_type' => 'short',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-    'show_repeat_rule' => '',
-  );
-  $handler->display->display_options['fields']['field_date']['group_rows'] = FALSE;
-  $handler->display->display_options['fields']['field_date']['delta_offset'] = '0';
-  /* Field: Content: Date */
-  $handler->display->display_options['fields']['field_date_1']['id'] = 'field_date_1';
-  $handler->display->display_options['fields']['field_date_1']['table'] = 'field_data_field_date';
-  $handler->display->display_options['fields']['field_date_1']['field'] = 'field_date';
-  $handler->display->display_options['fields']['field_date_1']['label'] = '';
-  $handler->display->display_options['fields']['field_date_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_date_1']['type'] = 'format_interval';
-  $handler->display->display_options['fields']['field_date_1']['settings'] = array(
-    'interval' => '2',
-    'interval_display' => 'raw time hence',
-  );
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Date -  start date (field_date) */
   $handler->display->display_options['arguments']['field_date_value']['id'] = 'field_date_value';
