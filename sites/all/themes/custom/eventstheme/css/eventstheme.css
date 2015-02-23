@@ -134,9 +134,26 @@ table {
   border-top: 0; }
   #primary td.date-box {
     padding: .25em; }
+    #primary td.date-box.today {
+      background-color: #FFFFbb; }
+  #primary td.past {
+    background-color: #FFFFdd;
+    opacity: .5; }
+  #primary td.single-day:not(.no-entry):not(.empty), #primary td.noentry-multi-day {
+    background-color: white;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, #ddddff));
+    background-image: -webkit-linear-gradient(white, #ddddff);
+    background-image: linear-gradient(white, #ddddff); }
+  #primary td.single-day.today {
+    background-color: #FFFFbb;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #FFFFbb), color-stop(100%, #ffff88));
+    background-image: -webkit-linear-gradient(#FFFFbb, #ffff88);
+    background-image: linear-gradient(#FFFFbb, #ffff88); }
 #primary .item a, #primary .item a:visited, #primary .item a:hover, #primary .item a:active {
   color: #000066;
   margin-right: .5em; }
+#primary .calendar-calendar .month-view .full td.single-day div.monthview {
+  background: none; }
 
 .view .date-nav-wrapper .date-nav {
   background-color: #dfdfdf;
